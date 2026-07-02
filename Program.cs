@@ -41,5 +41,14 @@
             }
             return people;
         }
+        static void SavePeopleToFile(List<Person> people)
+        {
+            List<string> rows = new List<string>(); 
+            foreach (Person p in people)
+            {
+                rows.Add(p.ToFileRow());
+            }
+            File.WriteAllLines(FilePath, rows);
+        }
     }
 }
