@@ -63,6 +63,11 @@
 
                     case "4":
                         break;
+                    case "5":
+                        running = false;
+                        Console.WriteLine("Изход от програмата.");
+                        break;
+
                     
                 }
             }
