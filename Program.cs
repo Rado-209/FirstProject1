@@ -20,7 +20,44 @@
 
                 string choice = Console.ReadLine();
                 Console.WriteLine();
-                
+                switch (choice)
+                {
+                    case "1":
+
+                        Console.Write("Въведете име: ");
+                        string name = Console.ReadLine();
+
+                        Console.Write("Въведете възраст: ");
+                        int age = int.Parse(Console.ReadLine());
+
+                        Console.Write("Въведете заплата: ");
+                        double salary = double.Parse(Console.ReadLine());
+
+                        Person newPerson = new Person(name, age, salary);
+                        people.Add(newPerson);
+
+                        SavePeopleToFile(people);
+                        Console.WriteLine("Успешно добавен нов запис!");
+                        Console.WriteLine();
+                        break;
+                    
+                    case "2":
+
+                        Console.WriteLine("--- Списък с хора");
+                        if(people.Count == 0)
+                        {
+                            Console.WriteLine("Списъкът е празен (няма записи във файла).");
+                        } 
+                        else
+                        {
+                            foreach(Person p in people)
+                            {
+                                Console.WriteLine(p);
+                            }
+                        }
+                        Console.WriteLine();
+                        break;
+                }
             }
         }
 
